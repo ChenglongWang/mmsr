@@ -75,8 +75,7 @@ def main():
             if version >= 1.1:  # PyTorch 1.1
                 from torch.utils.tensorboard import SummaryWriter
             else:
-                logger.info(
-                    'You are using PyTorch {}. Tensorboard will use [tensorboardX]'.format(version))
+                logger.info(f'You are using PyTorch {version}. Tensorboard will use [tensorboardX]')
                 from tensorboardX import SummaryWriter
             tb_logger = SummaryWriter(log_dir='../tb_logger/' + opt['name'])
     else:
